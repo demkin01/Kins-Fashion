@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details | Elegance Fashion</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="product.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">ELEGANCE<span>FASHION</span></a>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html#home" class="nav-link">Home</a></li>
+                <li><a href="index.html#shop" class="nav-link">Shop</a></li>
+                <li class="dropdown">
+                    <a href="#" class="nav-link">Categories <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="index.html" data-category="men">Men's Clothing</a>
+                        <a href="index.html" data-category="women">Women's Clothing</a>
+                        <a href="index.html" data-category="kids">Kids' Clothing</a>
+                        <a href="index.html" data-category="shoes">Shoes</a>
+                    </div>
+                </li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            
+            <div class="nav-icons">
+                <!-- Search Container -->
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Search products...">
+                    <button class="search-close"><i class="fas fa-times"></i></button>
+                </div>
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+                
+                <a href="index.html#cart" class="cart-icon">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count">0</span>
+                </a>
+                <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Product Details Section -->
+    <section class="product-details">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> / 
+                <a href="index.html#shop">Shop</a> / 
+                <span id="product-category">Category</span> / 
+                <span id="product-name">Product Name</span>
+            </div>
+            
+            <div class="product-container">
+                <!-- Left Column: Product Images -->
+                <div class="product-images">
+                    <div class="main-image">
+                        <img id="main-product-img" src="" alt="Product Image">
+                    </div>
+                    <div class="image-thumbnails">
+                        <!-- Thumbnails will be loaded dynamically -->
+                    </div>
+                </div>
+                
+                <!-- Right Column: Product Info -->
+                <div class="product-info">
+                    <h1 id="product-title">Product Title</h1>
+                    
+                    <div class="product-price-section">
+                        <span class="current-price" id="product-price">Ksh 0.00</span>
+                        <span class="original-price" id="original-price"></span>
+                        <span class="discount-badge" id="discount-badge"></span>
+                    </div>
+                    
+                    <div class="product-color">
+                        <h3>Color: <span id="selected-color-name">Coffee</span></h3>
+                        <div class="color-options" id="color-options">
+                            <!-- Color options will be loaded here -->
+                        </div>
+                    </div>
+                    
+                    <div class="product-size">
+                        <h3>Size</h3>
+                        <div class="size-options" id="size-options">
+                            <!-- Size options will be loaded here -->
+                        </div>
+                        <a href="#" class="size-guide">
+                            <i class="fas fa-ruler"></i> Size Guide
+                        </a>
+                    </div>
+                    
+                    <div class="product-quantity">
+                        <h3>Quantity</h3>
+                        <div class="quantity-selector">
+                            <button class="quantity-btn minus"><i class="fas fa-minus"></i></button>
+                            <input type="number" class="quantity-input" value="1" min="1" max="10">
+                            <button class="quantity-btn plus"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-actions">
+                        <button class="btn-primary btn-add-to-cart">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                        <button class="btn-buy-now">
+                            <i class="fas fa-bolt"></i> Buy Now
+                        </button>
+                        <button class="btn-wishlist">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="product-shipping">
+                        <div class="shipping-info">
+                            <i class="fas fa-shipping-fast"></i>
+                            <div>
+                                <strong>Free Delivery</strong>
+                                <p>For orders above Ksh 5,000 in Nairobi</p>
+                            </div>
+                        </div>
+                        <div class="shipping-info">
+                            <i class="fas fa-exchange-alt"></i>
+                            <div>
+                                <strong>Easy Returns</strong>
+                                <p>30-day return policy</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="product-description-section">
+                        <h3>Product Description</h3>
+                        <p id="product-description">Product description will appear here.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product Insights / Additional Info -->
+            <div class="product-insights">
+                <h2>Product Insights</h2>
+                <div class="insights-grid">
+                    <div class="insight-item">
+                        <i class="fas fa-weight-hanging"></i>
+                        <h4>Material & Care</h4>
+                        <p>Premium materials designed for comfort and durability. Machine wash cold, tumble dry low.</p>
+                    </div>
+                    <div class="insight-item">
+                        <i class="fas fa-shoe-prints"></i>
+                        <h4>Fit & Sizing</h4>
+                        <p>True to size. We recommend ordering your usual size for the perfect fit.</p>
+                    </div>
+                    <div class="insight-item">
+                        <i class="fas fa-leaf"></i>
+                        <h4>Sustainability</h4>
+                        <p>Crafted with eco-friendly materials and ethical production practices.</p>
+                    </div>
+                    <div class="insight-item">
+                        <i class="fas fa-award"></i>
+                        <h4>Quality Guarantee</h4>
+                        <p>All our products come with a 1-year quality guarantee against manufacturing defects.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Related Products -->
+            <div class="related-products">
+                <h2>You May Also Like</h2>
+                <div class="products-grid" id="related-products">
+                    <!-- Related products will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>ELEGANCE FASHION</h3>
+                    <p>Premium fashion for the modern individual. Quality meets style in every stitch.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#shop">Shop</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Returns & Exchanges</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Fashion Street, Nairobi</p>
+                    <p><i class="fas fa-phone"></i> +254 700 123 456</p>
+                    <p><i class="fas fa-envelope"></i> info@elegancefashion.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Elegance Fashion. All rights reserved.</p>
+                <div class="payment-methods">
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                    <span class="mpesa-logo">M-Pesa</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shopping Cart Sidebar (From Homepage - Include as is) -->
+    <div class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Shopping Bag</h3>
+            <button class="cart-close"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items">
+            <!-- Cart items will be loaded here -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span class="total-price">Ksh0.00</span>
+            </div>
+            <a href="checkout.html" class="btn-primary checkout-btn">Proceed to Checkout</a>
+            <button class="btn-secondary continue-shopping">Continue Shopping</button>
+        </div>
+    </div>
+    <div class="cart-overlay"></div>
+
+    <!-- Quick Action Modal (For mobile/tablet) -->
+    <div class="quick-modal">
+        <div class="quick-modal-content">
+            <button class="quick-modal-close">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <div class="quick-modal-header">
+                <h3 class="quick-modal-title">Product Name</h3>
+                <div class="quick-modal-price">Ksh0.00</div>
+            </div>
+            
+            <div class="quick-modal-body">
+                <!-- Size Selection -->
+                <div class="size-selection">
+                    <h4>Select Size</h4>
+                    <div class="size-options">
+                        <!-- Sizes will be loaded here -->
+                    </div>
+                </div>
+                
+                <!-- Color Selection -->
+                <div class="color-selection">
+                    <h4>Select Color</h4>
+                    <div class="color-options">
+                        <!-- Colors will be loaded here -->
+                    </div>
+                </div>
+            </div>
+            
+            <div class="quick-modal-footer">
+                <button class="quick-action-btn"></button>
+            </div>
+        </div>
+        
+        <div class="quick-modal-overlay"></div>
+    </div>
+
+    <script src="product.js"></script>
+    <!-- Include main script for cart functionality -->
+    <script src="script.js"></script>
+</body>
+</html>

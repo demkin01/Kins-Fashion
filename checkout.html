@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | Elegance Fashion</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="checkout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">ELEGANCE<span>FASHION</span></a>
+            <div class="nav-icons">
+                <a href="index.html" class="btn-secondary">
+                    <i class="fas fa-arrow-left"></i> Back to Shop
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Checkout Page -->
+    <section class="checkout-page">
+        <div class="checkout-container">
+            <div class="checkout-header">
+                <h1>Checkout</h1>
+                <p>Complete your purchase in just a few steps</p>
+            </div>
+            
+            <!-- Progress Bar -->
+            <div class="checkout-progress">
+                <div class="progress-step active" data-step="1">
+                    <div class="progress-step-circle">1</div>
+                    <div class="progress-step-label">Shipping</div>
+                </div>
+                <div class="progress-step" data-step="2">
+                    <div class="progress-step-circle">2</div>
+                    <div class="progress-step-label">Payment</div>
+                </div>
+                <div class="progress-step" data-step="3">
+                    <div class="progress-step-circle">3</div>
+                    <div class="progress-step-label">Review</div>
+                </div>
+            </div>
+            
+            <div class="checkout-layout">
+                <!-- Left Column: Checkout Steps -->
+                <div class="checkout-left">
+                    <!-- Step 1: Shipping -->
+                    <div class="checkout-steps" id="step-1">
+                        <div class="step-header">
+                            <div class="step-number">1</div>
+                            <div>
+                                <div class="step-title">Delivery Information</div>
+                                <div class="step-subtitle">Choose how you want to receive your order</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Shipping Form -->
+                        <form id="shippingForm">
+                            <div class="form-section">
+                                <div class="section-title">Personal Information</div>
+                                <div class="form-grid">
+                                    <div class="form-group">
+                                        <label class="form-label">First Name <span class="required">*</span></label>
+                                        <input type="text" class="form-input" id="firstName" required>
+                                        <div class="error-message" id="firstNameError">Please enter your first name</div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="form-label">Last Name <span class="required">*</span></label>
+                                        <input type="text" class="form-input" id="lastName" required>
+                                        <div class="error-message" id="lastNameError">Please enter your last name</div>
+                                    </div>
+                                    
+                                    <div class="form-group full-width">
+                                        <label class="form-label">Phone Number <span class="required">*</span></label>
+                                        <input type="tel" class="form-input" id="phone" required placeholder="+254 712 345 678">
+                                        <div class="error-message" id="phoneError">Please enter a valid phone number</div>
+                                        <div class="form-hint">We'll contact you for delivery updates</div>
+                                    </div>
+                                    
+                                    <div class="form-group full-width">
+                                        <label class="form-label">Email Address</label>
+                                        <input type="email" class="form-input" id="email" placeholder="your.email@example.com">
+                                        <div class="error-message" id="emailError">Please enter a valid email address</div>
+                                        <div class="form-hint">We'll send your order confirmation here</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-section">
+                                <div class="section-title">Delivery Options</div>
+                                
+                                <!-- Shop Pickup Option -->
+                                <div class="delivery-option" data-type="pickup" data-price="0">
+                                    <div class="delivery-option-header">
+                                        <div class="delivery-option-left">
+                                            <input type="radio" id="shop-pickup" name="delivery-option" class="delivery-radio" data-price="0">
+                                            <label for="shop-pickup" class="delivery-label">
+                                                <div class="delivery-option-title">Shop Pickup</div>
+                                                <div class="delivery-option-description">Pick up your order from our Nairobi shop</div>
+                                            </label>
+                                        </div>
+                                        <div class="delivery-option-price">Kshs 0</div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Delivery Option -->
+                                <div class="delivery-option active" data-type="delivery" data-price="100">
+                                    <div class="delivery-option-header">
+                                        <div class="delivery-option-left">
+                                            <input type="radio" id="delivery" name="delivery-option" class="delivery-radio" checked data-price="100">
+                                            <label for="delivery" class="delivery-label">
+                                                <div class="delivery-option-title">Home Delivery</div>
+                                                <div class="delivery-option-description">We deliver to your location</div>
+                                            </label>
+                                        </div>
+                                        <div class="delivery-option-price"></div>
+                                    </div>
+                                    
+                                    <!-- Delivery Location Dropdown -->
+                                    <div class="delivery-location-section">
+                                        <label class="form-label" style="margin-top: 16px;">Select Delivery Location <span class="required">*</span></label>
+                                        <select class="form-input" id="deliveryLocation" required>
+                                            <optgroup label="Nairobi Areas">
+                                                <option value="kasarani">Kasarani</option>
+                                                <option value="roysambu">Roysambu</option>
+                                                <option value="imara">Imara Daima</option>
+                                                <option value="ngong">Ngong Road</option>
+                                                <option value="westlands">Westlands</option>
+                                                <option value="kilimani">Kilimani</option>
+                                                <option value="langata">Langata</option>
+                                                <option value="karen">Karen</option>
+                                                <option value="runda">Runda</option>
+                                                <option value="lavington">Lavington</option>
+                                                <option value="parklands">Parklands</option>
+                                                <option value="hillview">Hillview</option>
+                                                <option value="south_b">South B</option>
+                                                <option value="south_c">South C</option>
+                                                <option value="upperhill">Upper Hill</option>
+                                                <option value="donholm">Donholm</option>
+                                                <option value="buruburu">Buruburu</option>
+                                                <option value="uhuru">Uhuru</option>
+                                                <option value="kawangware">Kawangware</option>
+                                                <option value="dagoretti">Dagoretti</option>
+                                                <option value="kileleshwa">Kileleshwa</option>
+                                            </optgroup>
+                                            <optgroup label="Major Cities Outside Nairobi">
+                                                <option value="mombasa" data-price="300">Mombasa - Kshs 500</option>
+                                                <option value="kisumu" data-price="400">Kisumu - Kshs 400</option>
+                                                <option value="nakuru" data-price="300">Nakuru - Kshs 300</option>
+                                                <option value="eldoret" data-price="350">Eldoret - Kshs 350</option>
+                                                <option value="thika" data-price="200">Thika - Kshs 200</option>
+                                                <option value="naivasha" data-price="250">Naivasha - Kshs 250</option>
+                                                <option value="nyeri" data-price="300">Nyeri - Kshs 300</option>
+                                                <option value="kakamega" data-price="400">Kakamega - Kshs 400</option>
+                                                <option value="machakos" data-price="200">Machakos - Kshs 200</option>
+                                                <option value="kitui" data-price="400">Kitui - Kshs 400</option>
+                                                <option value="kisii" data-price="450">Kisii - Kshs 450</option>
+                                                <option value="meru" data-price="400">Meru - Kshs 400</option>
+                                            </optgroup>
+                                        </select>
+                                        <div class="error-message" id="locationError">Please select a delivery location</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        
+                        <div class="form-section">
+                            <button class="btn-primary next-step" data-next="2" id="continueToPayment">
+                                Continue to Payment <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 2: Payment -->
+                    <div class="checkout-steps" id="step-2" style="display: none;">
+                        <div class="step-header">
+                            <div class="step-number">2</div>
+                            <div>
+                                <div class="step-title">Payment Method</div>
+                                <div class="step-subtitle">Choose how you'd like to pay</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Payment Methods -->
+                        <div class="form-section">
+                            <div class="section-title">Select Payment Method</div>
+                            <div class="payment-methods">
+                                <!-- M-Pesa -->
+                                <div class="payment-method active" data-method="mpesa">
+                                    <div class="payment-method-icon mpesa-icon">
+                                        <i class="fas fa-mobile-alt"></i>
+                                    </div>
+                                    <div class="payment-method-info">
+                                        <div class="payment-method-title">M-Pesa</div>
+                                        <div class="payment-method-description">Pay via STK Push on your phone</div>
+                                    </div>
+                                    <i class="fas fa-check-circle" style="color: #2C3E50;"></i>
+                                </div>
+                                
+                                <!-- Credit/Debit Card -->
+                                <div class="payment-method" data-method="card">
+                                    <div class="payment-method-icon card-icon">
+                                        <i class="fas fa-credit-card"></i>
+                                    </div>
+                                    <div class="payment-method-info">
+                                        <div class="payment-method-title">Credit/Debit Card</div>
+                                        <div class="payment-method-description">Pay with Visa, Mastercard, or Amex</div>
+                                    </div>
+                                    <i class="fas fa-check-circle" style="color: #ddd;"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- M-Pesa Details -->
+                        <div class="card-details active" id="mpesa-details">
+                            <div class="section-title">M-Pesa Payment Details</div>
+                            <form id="mpesaForm">
+                                <div class="form-group">
+                                    <label class="form-label">Phone Number <span class="required">*</span></label>
+                                    <input type="tel" class="form-input" id="mpesaPhone" required placeholder="+254 712 345 678">
+                                    <div class="error-message" id="mpesaPhoneError">Please enter a valid M-Pesa phone number</div>
+                                    <div class="form-hint">You will receive a payment prompt on this number</div>
+                                </div>
+                            </form>
+                        </div>
+                        
+                        <!-- Card Details (Hidden by default) -->
+                        <div class="card-details" id="card-details">
+                            <div class="section-title">Card Details</div>
+                            <form id="cardForm">
+                                <div class="form-group full-width">
+                                    <label class="form-label">Card Number <span class="required">*</span></label>
+                                    <input type="text" class="form-input" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19">
+                                    <div class="error-message" id="cardNumberError">Please enter a valid card number</div>
+                                    <div class="card-icons" style="margin-top: 8px;">
+                                        <i class="fab fa-cc-visa" style="font-size: 24px; margin-right: 8px; color: #1a1a1a;"></i>
+                                        <i class="fab fa-cc-mastercard" style="font-size: 24px; margin-right: 8px; color: #1a1a1a;"></i>
+                                        <i class="fab fa-cc-amex" style="font-size: 24px; color: #1a1a1a;"></i>
+                                    </div>
+                                </div>
+                                
+                                <div class="card-input-group">
+                                    <div class="form-group">
+                                        <label class="form-label">Expiry Date <span class="required">*</span></label>
+                                        <input type="text" class="form-input" id="cardExpiry" placeholder="MM/YY">
+                                        <div class="error-message" id="cardExpiryError">Please enter a valid expiry date</div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="form-label">CVV <span class="required">*</span></label>
+                                        <input type="text" class="form-input" id="cardCvv" placeholder="123" maxlength="4">
+                                        <div class="error-message" id="cardCvvError">Please enter a valid CVV</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group full-width">
+                                    <label class="form-label">Name on Card <span class="required">*</span></label>
+                                    <input type="text" class="form-input" id="cardName" placeholder="John Doe">
+                                    <div class="error-message" id="cardNameError">Please enter the name on the card</div>
+                                </div>
+                            </form>
+                        </div>
+                        
+                        <div class="form-section">
+                            <div style="display: flex; gap: 16px;">
+                                <button class="btn-secondary prev-step" data-prev="1">
+                                    <i class="fas fa-arrow-left"></i> Back to Shipping
+                                </button>
+                                <button class="btn-primary next-step" data-next="3" id="continueToReview">
+                                    Review Order <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 3: Review -->
+                    <div class="checkout-steps" id="step-3" style="display: none;">
+                        <div class="step-header">
+                            <div class="step-number">3</div>
+                            <div>
+                                <div class="step-title">Review Your Order</div>
+                                <div class="step-subtitle">Please review before placing your order</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Order Summary (Inline) -->
+                        <div class="form-section">
+                            <div class="section-title">Order Details</div>
+                            <div id="reviewOrderItems" style="background: #f9f9f9; border-radius: 8px; padding: 20px;">
+                                <!-- Cart items will be loaded here -->
+                            </div>
+                        </div>
+                        
+                        <!-- Delivery Details -->
+                        <div class="form-section">
+                            <div class="section-title">Delivery Details</div>
+                            <div id="reviewDelivery" style="background: #f9f9f9; border-radius: 8px; padding: 20px;">
+                                <!-- Delivery info will be loaded here -->
+                            </div>
+                        </div>
+                        
+                        <!-- Payment Details -->
+                        <div class="form-section">
+                            <div class="section-title">Payment Details</div>
+                            <div id="reviewPayment" style="background: #f9f9f9; border-radius: 8px; padding: 20px;">
+                                <!-- Payment info will be loaded here -->
+                            </div>
+                        </div>
+                        
+                        <!-- Terms & Conditions -->
+                        <div class="form-section">
+                            <div style="background: #f9f9f9; border-radius: 8px; padding: 20px;">
+                                <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px;">
+                                    <input type="checkbox" id="terms" style="margin-top: 4px;">
+                                    <label for="terms" style="font-size: 14px; color: #666; line-height: 1.5;">
+                                        I agree to the <a href="#" style="color: #2C3E50; text-decoration: underline;">Terms and Conditions</a> and <a href="#" style="color: #2C3E50; text-decoration: underline;">Privacy Policy</a>. I understand that my order will be processed within 24 hours and that I can cancel within 1 hour of placing the order.
+                                    </label>
+                                </div>
+                                
+                                <div style="display: flex; align-items: flex-start; gap: 12px;">
+                                    <input type="checkbox" id="newsletter" style="margin-top: 4px;">
+                                    <label for="newsletter" style="font-size: 14px; color: #666;">
+                                        Yes, I want to receive exclusive offers and updates via email.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-section">
+                            <div style="display: flex; gap: 16px;">
+                                <button class="btn-secondary prev-step" data-prev="2">
+                                    <i class="fas fa-arrow-left"></i> Back to Payment
+                                </button>
+                                <button class="btn-primary" id="place-order-btn">
+                                    <i class="fas fa-lock"></i> Place Order
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Column: Order Summary -->
+                <div class="order-summary-sidebar">
+                    <div class="order-summary-card">
+                        <div class="order-summary-title">Order Summary</div>
+                        
+                        <div id="orderItemsContainer" class="order-items">
+                            <!-- Cart items will be loaded dynamically -->
+                            <div class="empty-cart-message">
+                                <i class="fas fa-shopping-bag"></i>
+                                <p>Your cart is empty</p>
+                                <a href="index.html" class="btn-secondary" style="font-size: 14px; padding: 8px 16px;">Continue Shopping</a>
+                            </div>
+                        </div>
+                        
+                        <div class="order-summary-row">
+                            <span>Subtotal</span>
+                            <span id="subtotal">Kshs 0.00</span>
+                        </div>
+                        
+                        <div class="order-summary-row">
+                            <span>Delivery Fee</span>
+                            <span id="shippingCost">Kshs 100.00</span>
+                        </div>
+                        
+                        <div class="order-summary-row total">
+                            <span>Total</span>
+                            <span id="total">Kshs 100.00</span>
+                        </div>
+                    </div>
+                    
+                    <div class="secure-checkout">
+                        <i class="fas fa-shield-alt"></i>
+                        <p>Secure checkout • Your information is protected</p>
+                    </div>
+                    
+                    <div class="order-summary-card">
+                        <div class="order-summary-title">Need Help?</div>
+                        <div style="color: #666; font-size: 14px; line-height: 1.5; margin-bottom: 16px;">
+                            Contact our customer support for any questions about your order.
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 12px; color: #2C3E50;">
+                            <i class="fas fa-phone"></i>
+                            <span>+254 700 123 456</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 12px; color: #2C3E50; margin-top: 8px;">
+                            <i class="fas fa-envelope"></i>
+                            <span>support@elegancefashion.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="index.html#cart" class="back-to-cart">
+                <i class="fas fa-arrow-left"></i> Return to Cart
+            </a>
+        </div>
+    </section>
+
+    <!-- Order Success Modal -->
+    <div class="modal-overlay" id="success-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <div class="modal-title">Order Confirmed!</div>
+                <div class="modal-subtitle">Thank you for your purchase</div>
+            </div>
+            
+            <div class="modal-body">
+                <div class="order-details">
+                    <div class="order-detail-row">
+                        <span class="order-detail-label">Order Number:</span>
+                        <span class="order-detail-value" id="order-number">ELG-4567-2024</span>
+                    </div>
+                    <div class="order-detail-row">
+                        <span class="order-detail-label">Date:</span>
+                        <span class="order-detail-value" id="order-date">Dec 19, 2024</span>
+                    </div>
+                    <div class="order-detail-row">
+                        <span class="order-detail-label">Total Amount:</span>
+                        <span class="order-detail-value" id="order-total">Kshs 0.00</span>
+                    </div>
+                    <div class="order-detail-row">
+                        <span class="order-detail-label">Payment Method:</span>
+                        <span class="order-detail-value" id="order-payment-method">M-Pesa</span>
+                    </div>
+                    <div class="order-detail-row">
+                        <span class="order-detail-label">Delivery Method:</span>
+                        <span class="order-detail-value" id="order-delivery">Home Delivery</span>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-bottom: 24px;">
+                    <p style="color: #666; font-size: 15px;">
+                        A confirmation email has been sent to <strong id="customer-email">customer@email.com</strong>
+                    </p>
+                </div>
+                
+                <div class="modal-actions">
+                    <button class="modal-btn modal-btn-primary" onclick="window.location.href='index.html'">
+                        <i class="fas fa-home"></i> Back to Home
+                    </button>
+                    <button class="modal-btn modal-btn-secondary" id="print-receipt">
+                        <i class="fas fa-print"></i> Print Receipt
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="checkout.js"></script>
+</body>
+</html>
